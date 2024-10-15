@@ -1,5 +1,5 @@
 <script lang="ts">
-import type ICategoria from '@/interfaces/ICategoria';
+import type ICategoria from '../interfaces/ICategoria';
 import type { PropType } from 'vue';
 import Tag from './Tag.vue';
 import IngredienteSelecionavel from './IngredienteSelecionavel.vue';
