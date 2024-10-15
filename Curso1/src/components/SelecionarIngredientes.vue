@@ -1,47 +1,47 @@
 <script lang="ts">
-import { obterCategorias } from '../http/index';
-import ICategoria from '../interfaces/ICategoria';
+import { obterCategorias } from '@/http/index';
+import type ICategoria from '@/interfaces/ICategoria';
 import CardCategoria from './CardCategoria.vue';
-
-
+import BotaoPrincipal from './BotaoPrincipal.vue';
 
 export default {
-    data() {
-        return {
-            categorias: [] as ICategoria[]
-        }
-    },
-    async created() {
-        this.categorias = await obterCategorias();
-    },
-    components : {CardCategoria}
+  data() {
+    return {
+      categorias: [] as ICategoria[]
+    };
+  },
+  async created() {
+    this.categorias = await obterCategorias();
+  },
+  components: { CardCategoria, BotaoPrincipal },
+  emits: ['adicionarIngrediente', 'removerIngrediente']
 }
 </script>
 
 <template>
-
-<section class="selecionar-ingredientes">
+  <section class="selecionar-ingredientes">
     <h1 class="cabecalho titulo-ingredientes">Ingredientes</h1>
 
     <p class="paragrafo-lg instrucoes">
-        Selecione Abaixo os igredientes que você quer utilizar nessa receita
+      Selecione abaixo os ingredientes que você quer usar nesta receita:
     </p>
 
     <ul class="categorias">
-        <li v-for="categoria in categorias" :key="categoria.nome">
-            <li> 
-              <CardCategoria :categoria="categoria"/>
-            </li>
-        </li>
-
-
+      <li v-for="categoria in categorias" :key="categoria.nome">
+        <CardCategoria
+          :categoria="categoria"
+          @adicionar-ingrediente="$emit('adicionarIngrediente', $event)"
+          @remover-ingrediente="$emit('removerIngrediente', $event)"
+        />
+      </li>
     </ul>
 
     <p class="paragrafo dica">
-        Atenção! Consideramos que você tenha em casa sal pimenta e agua
+      *Atenção: consideramos que você tem em casa sal, pimenta e água.
     </p>
-</section>
 
+    <BotaoPrincipal texto="Buscar receitas!" />
+  </section>
 </template>
 
 <style scoped>
@@ -70,9 +70,8 @@ export default {
 }
 
 .dica {
-  align-self: center;
+  align-self: flex-start;
   margin-bottom: 3.5rem;
-  
 }
 
 @media only screen and (max-width: 767px) {
@@ -80,5 +79,4 @@ export default {
     margin-bottom: 2.5rem;
   }
 }
-
 </style>
