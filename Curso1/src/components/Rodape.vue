@@ -1,6 +1,6 @@
 <template>
   <footer class="rodape paragrafo">
-    Desenvolvido por Alura | 2023 - Projeto fictício sem fins comerciais.
+    Desenvolvido por Athos | 2024 - Estudando Vue Pela Alura
   </footer>
 </template>
 
