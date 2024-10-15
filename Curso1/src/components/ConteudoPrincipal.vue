@@ -1,4 +1,5 @@
 <script lang="ts">
+import CardCategoria from './CardCategoria.vue';
 import SelecionarIngredientes from './SelecionarIngredientes.vue';
 
 
@@ -8,7 +9,7 @@ export default {
             ingredientes: ['Alho' , 'Manteiga' , 'Orégano']
         }
     },
-     components: { SelecionarIngredientes}
+     components: { SelecionarIngredientes,}
     
     }
 </script>
