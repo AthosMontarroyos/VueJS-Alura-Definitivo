@@ -18,33 +18,29 @@
 
 <script lang="ts">
 import { defineComponent } from "vue";
-import Cronometro from './Cronometro.vue'
+import OCronometro from './Cronometro.vue'
 
 export default defineComponent({
-  name: "Temporizador",
+  name: "OTempo",
   emits: ['aoTemporizadorFinalizado'],
-  components: {
-    Cronometro
-  },
+  components: { },
   data () {
     return {
       tempoEmSegundos: 0,
-      cronometro: 0,
+      Cronometro: 0,
       cronometroRodando: false
     }
   },
   methods: {
     iniciar () {
-      // começar a contagem
-      // 1 seg = 1000 ms
       this.cronometroRodando = true
-      this.cronometro = setInterval(() => {
+      this.Cronometro = setInterval(() => {
         this.tempoEmSegundos += 1        
       }, 1000)
     },
     finalizar () {
       this.cronometroRodando = false
-      clearInterval(this.cronometro)
+      clearInterval(this.Cronometro)
       this.$emit('aoTemporizadorFinalizado', this.tempoEmSegundos)
       this.tempoEmSegundos = 0
     }
