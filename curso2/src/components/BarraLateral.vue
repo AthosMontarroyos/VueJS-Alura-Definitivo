@@ -1,19 +1,46 @@
 <script lang="ts">
 import { defineComponent, } from 'vue';
-export default defineComponent ({
-name: 'App'
+export default defineComponent({
+  name: 'BarraLateral',
+  emits: ['aoTemaAlterado'],
+  data() {
+    return {
+      modoEscuroAtivo: false
+    }
 
-})
+  },
+  computed: {
+    textoBotao() {
+      if (this.modoEscuroAtivo === false) {
+        return 'Desativar Modo Escuro'
+
+      } else {
+        return 'Ativar Modo Escuro'
+      }
+
+    }},
+    methods: {
+      alterarTema() {
+        this.modoEscuroAtivo = !this.modoEscuroAtivo
+        this.$emit('aoTemaAlterado', this.modoEscuroAtivo)
+      }
+    }
+
+
+  })
 </script>
 
 
 <template>
 
-<header>
+  <header>
     <h1>
-        <img src="../assets/logo.png" alt="logo do Alura Tracker">
+      <img src="../assets/logo.png" alt="logo do Alura Tracker">
     </h1>
-</header>
+    <button class="button" @click="alterarTema">
+      {{ textoBotao }}
+    </button>
+  </header>
 
 
 </template>
@@ -28,6 +55,7 @@ header {
   height: 100vh;
   text-align: center;
 }
+
 @media only screen and (max-width: 768px) {
   header {
     padding: 2.5rem;
