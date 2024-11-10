@@ -33,7 +33,6 @@
 
 <script lang="ts">
 import { useStore } from '@/store';
-import IProjeto from '@/interfaces/IProjeto';
 import {  computed ,defineComponent } from "vue";
 
 
