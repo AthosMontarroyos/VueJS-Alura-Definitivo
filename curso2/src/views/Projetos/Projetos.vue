@@ -34,11 +34,11 @@
 <script lang="ts">
 import { useStore } from '@/store';
 import IProjeto from '@/interfaces/IProjeto';
-import {  computed ,defineComponent } from "vue";
+import { computed, defineComponent } from 'vue';
 
 
 export default defineComponent({
-    name: 'ProjetosTarefas',
+    name: 'FormularioTarefas',
     data() {
         return {
             nomeDoProjeto: "",
