@@ -1,27 +1,11 @@
 <template>
     <div class="notificacoes">
-        <article class="message is-success">
+        <article class="message is-success" v-for="notificacao in notificacoes" :key="notificacao.id">
             <div class="message-header">
-                Atenção
+                {{ notificacao.titulo }}
             </div>
             <div class="message-body">
-                Aqui vai um texto de notificacoes
-            </div>
-        </article>
-        <article class="message is-warning">
-            <div class="message-header">
-                Atenção
-            </div>
-            <div class="message-body">
-                Aqui vai um texto de notificacoes
-            </div>
-        </article>
-        <article class="message is-danger">
-            <div class="message-header">
-                Atenção
-            </div>
-            <div class="message-body">
-                Aqui vai um texto de notificacoes
+                {{ notificacao.texto }}
             </div>
         </article>
     </div>
@@ -29,10 +13,16 @@
 
 <script lang="ts">
 
-import { defineComponent } from 'vue';
+import { computed, defineComponent } from 'vue';
+import { Store, useStore } from 'vuex';
 
 export default defineComponent({
-    name: 'NotificaçõesVue'
+    name: 'NotificaçõesVue',
+    setup () {
+        const store = useStore();
+        return {
+            notificacoes: computed(() => store.state.notificacoes)        }
+    }
 
 })
 </script>
