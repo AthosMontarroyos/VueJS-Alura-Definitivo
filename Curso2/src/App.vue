@@ -14,6 +14,8 @@
 import { defineComponent } from 'vue';
 import BarraLateral from './components/BarraLateral.vue';
 export default defineComponent({
+
+  
   name: 'App',
   components: { BarraLateral, },
   data() {
