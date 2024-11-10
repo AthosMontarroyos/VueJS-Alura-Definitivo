@@ -14,14 +14,15 @@
 <script lang="ts">
 
 import { computed, defineComponent } from 'vue';
-import { Store, useStore } from 'vuex';
+import { useStore } from 'vuex';
 
 export default defineComponent({
-    name: 'NotificaçõesVue',
+    name: "NotificaçõesVue",
     setup () {
         const store = useStore();
         return {
-            notificacoes: computed(() => store.state.notificacoes)        }
+            notificacoes: computed(() => store.state.notificacoes) 
+        }
     }
 
 })

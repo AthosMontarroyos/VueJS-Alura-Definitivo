@@ -27,14 +27,12 @@ export const store = createStore<Estado>({
                 titulo: 'Atenção',
                 tipo: TipoNotificacao.ATENCAO
             },
-            {   id: 1,
+            {
+                id: 1,
                 texto: 'Uma notificação de falha',
                 titulo: 'falha',
                 tipo: TipoNotificacao.FALHA
             }
-            
-            
-
         ]
     },
     mutations: {
