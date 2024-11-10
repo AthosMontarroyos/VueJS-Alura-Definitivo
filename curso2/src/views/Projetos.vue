@@ -42,7 +42,6 @@ export default defineComponent({
     data() {
         return {
             nomeDoProjeto: "",
-            projetos: [] as IProjeto[]
         };
     },
     methods: {
@@ -52,7 +51,7 @@ export default defineComponent({
         }
     },
     setup () {
-        const store = useStore
+        const store = useStore()
         return {
             store,
             projetos:  computed(() => store.state.projetos)        }
@@ -65,3 +64,5 @@ export default defineComponent({
     padding: 1.25rem;
 }
 </style>
+
+key
