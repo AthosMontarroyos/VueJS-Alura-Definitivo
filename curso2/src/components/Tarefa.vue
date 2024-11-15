@@ -21,7 +21,7 @@ import Box from "./Box.vue";
 import ITarefa from "../interfaces/ITarefa";
 
 export default defineComponent({
-  name: 'Tarefa',
+  name: 'TarefaFormulario',
   emits: ['aoTarefaClicada'],
   components: {
     Cronometro,

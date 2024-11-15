@@ -59,7 +59,7 @@ import {
 import ITarefa from "@/interfaces/ITarefa";
 
 export default defineComponent({
-  name: "App",
+  name: "AppVue",
   components: {
     Formulario,
     Tarefa,

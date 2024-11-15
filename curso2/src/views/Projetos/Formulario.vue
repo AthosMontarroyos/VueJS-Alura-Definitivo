@@ -27,7 +27,7 @@ import useNotificador from "@/hooks/notificador";
 import { ALTERAR_PROJETO, CADASTRAR_PROJETO } from "@/store/tipo-acoes";
 
 export default defineComponent({
-  name: "Formulario",
+  name: "FormularioTares/Projetos",
   props: {
     id: {
       type: String,
