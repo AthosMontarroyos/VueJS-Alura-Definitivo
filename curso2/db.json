@@ -1,12 +1,23 @@
 {
   "projetos": [
     {
-      "id": 1,
+      "id": "1",
       "nome": "Alura Tracker 3.0"
     },
     {
-      "id": "ddcc",
+      "id": "d76a",
       "nome": "ByteBank"
+    }
+  ],
+  "Tarefas": [
+    {
+      "id": 1,
+      "duracaoEmSegundos": 120,
+      "descricao": "Configuração Do Ambiente",
+      "projeto": {
+        "id": 1,
+        "nome":"Alura Tracker 3.0"
+      }
     }
   ]
 }

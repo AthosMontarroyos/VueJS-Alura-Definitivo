@@ -9,11 +9,13 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from "vue";
+import { computed, defineComponent } from "vue";
 import Formulario from "../components/Formulario.vue";
 import Tarefa from "../components/Tarefa.vue";
 import Box from "../components/Box.vue";
 import ITarefa from "../interfaces/ITarefa"
+import { OBTER_TAREFAS } from "@/store/tipo-acoes";
+import { useStore } from "vuex";
 
 export default defineComponent({
   name: "AppVue",
@@ -22,11 +24,7 @@ export default defineComponent({
     Tarefa,
     Box
   },
-  data () {
-    return {
-      tarefas: [] as ITarefa[]
-    }
-  },
+ 
   methods: {
     salvarTarefa (tarefa:ITarefa) : void {
       this.tarefas.push(tarefa)
@@ -36,6 +34,15 @@ export default defineComponent({
     semTarefas () :boolean {
       return this.tarefas.length == 0
     }
+  },
+  setup () {
+    const store = useStore()
+    store.dispatch(OBTER_TAREFAS)
+    return {
+      tarefas: computed(() => store.state.tarefas),
+      store
+    }
   }
+
 });
 </script>
