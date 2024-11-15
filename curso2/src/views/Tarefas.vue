@@ -5,6 +5,7 @@
       Você não está muito produtivo hoje
       <span class="has-text-weight-bold">:(</span>
     </Box>
+    
     <Tarefa
       v-for="(tarefa, index) in tarefas"
       :tarefa="tarefa"
