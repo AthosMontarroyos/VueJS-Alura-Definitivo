@@ -6,12 +6,6 @@
       <span class="has-text-weight-bold">:(</span>
     </Box>
     
-    <Tarefa
-      v-for="(tarefa, index) in tarefas"
-      :tarefa="tarefa"
-      :key="index"
-      @aoTarefaClicada="selecionarTarefa"
-    />
     <div class="modal" :class="{ 'is-active': tarefaSelecionada }" v-if="tarefaSelecionada">
       <div class="modal-background"></div>
       <div class="modal-card">
