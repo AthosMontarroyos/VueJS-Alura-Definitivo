@@ -20,7 +20,7 @@ import { useStore } from "@/store";
 import { TipoNotificacao } from "@/interfaces/INotificacao";
 
 export default defineComponent({
-  name: "NotificacoesVue",
+  name: "Notificacoes",
   data () {
     return {
       contexto: {

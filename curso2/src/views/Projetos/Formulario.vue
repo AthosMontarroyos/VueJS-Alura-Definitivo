@@ -27,7 +27,7 @@ import useNotificador from "@/hooks/notificador";
 import { ALTERAR_PROJETO, CADASTRAR_PROJETO } from "@/store/tipo-acoes";
 
 export default defineComponent({
-  name: "FormularioVue",
+  name: "Formulario",
   props: {
     id: {
       type: String,
@@ -35,7 +35,7 @@ export default defineComponent({
   },
   mounted() {
     if (this.id) {
-      const projeto = this.store.state.projetos.find(
+      const projeto = this.store.state.projeto.projetos.find(
         (proj) => proj.id == this.id
       );
       this.nomeDoProjeto = projeto?.nome || "";
