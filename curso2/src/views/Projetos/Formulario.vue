@@ -28,7 +28,7 @@ import { ALTERAR_PROJETO, CADASTRAR_PROJETO } from "@/store/tipo-acoes";
 import { useRouter } from "vue-router";
 
 export default defineComponent({
-  name: "Formulario",
+  name: "FormularioProjetos",
   props: {
     id: {
       type: String,

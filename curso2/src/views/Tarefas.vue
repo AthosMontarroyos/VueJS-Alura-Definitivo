@@ -24,7 +24,7 @@
       :key="index"
       @aoTarefaClicada="selecionarTarefa"
     />
-    <Modal :mostrar="tarefaSelecionada != null">
+    <Modal v-if="tarefaSelecionada !== null" :mostrar="tarefaSelecionada !== null">
       <template v-slot:cabecalho>
         <p class="modal-card-title">Editando uma tarefa</p>
         <button @click="fecharModal" class="delete" aria-label="close"></button>
@@ -66,7 +66,7 @@ import {
 import ITarefa from "@/interfaces/ITarefa";
 
 export default defineComponent({
-  name: "App",
+  name: "AppTarefasVue",
   components: {
     Formulario,
     Tarefa,

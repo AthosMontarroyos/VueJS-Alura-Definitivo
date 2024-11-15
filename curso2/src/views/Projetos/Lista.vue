@@ -44,7 +44,7 @@ import { computed, defineComponent } from "vue";
 import { OBTER_PROJETOS, REMOVER_PROJETO } from "@/store/tipo-acoes";
 
 export default defineComponent({
-  name: "Lista",
+  name: "ListaProjetos",
   methods: {
     excluir (id: string) {
       this.store.dispatch(REMOVER_PROJETO, id)
