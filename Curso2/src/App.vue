@@ -23,7 +23,7 @@ export default defineComponent({
   },
   data () {
     return {
-      modoEscuro: false
+      modoEscuro: true
     }
   },
   methods: {
